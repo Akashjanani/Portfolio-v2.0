@@ -1,24 +1,26 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Box, Container, Grid } from '@material-ui/core';
 import ProfileImage from './ProfileImage';
 import AboutMeContent from './AboutMeContent';
 
-const StyledDiv = styled.div`
-  display: inline-flex;
-  width: 80%;
+const CenteredTextGrid = styled(Grid)`
   text-align: center;
-  left: 15%;
-  top: 25%;
-  position: absolute;
 `;
 
 const AboutMe = () => {
   return (
-    <StyledDiv>
-      <ProfileImage />
-      <AboutMeContent />
-    </StyledDiv>
-  )
+    <Container>
+      <Box display="flex" height="100vh" alignItems="center">
+        <Grid container xs="6" justify="center">
+          <ProfileImage />
+        </Grid>
+        <CenteredTextGrid container xs="6" justify="center">
+          <AboutMeContent />
+        </CenteredTextGrid>
+      </Box>
+    </Container>
+  );
 };
 
 export default AboutMe;
